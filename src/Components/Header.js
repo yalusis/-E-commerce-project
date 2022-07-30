@@ -7,11 +7,11 @@ let [cart_Open, set_cart_Open] = useState(false)
 
 const showOrders = (props) => {
   let summa = 0
-  props.orders.forEach(el => summa += Number.parseFloat(el.price));
+  props.orders.forEach(el => summa += ( Number.parseFloat(el.price) * el.amount));
   return(
     <div>
       {props.orders.map(el => (
-        <Order onDelete={props.onDelete} key={el.id} item={el}/>
+        <Order state={props.state} set_state={props.set_state}  orders={props.orders} onChangeState={props.onChangeState} onDelete={props.onDelete} key={el.id} item={el}/>
       ))}
       <p className='summa'>Сума: {new Intl.NumberFormat().format(summa)}$</p>
     </div>

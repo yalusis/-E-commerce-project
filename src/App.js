@@ -18,7 +18,8 @@ function App() {
       img: './image/grey-chair.jpg',
       desc: 'Зручний та стильний стілець, який неодмінно прикрашить ваш дім',
       category: 'chairs',
-      price: '79.99'
+      price: '79.99',
+      amount: 1
     },
     {
       id: 1,
@@ -26,7 +27,8 @@ function App() {
       img: './image/desk.jpg',
       desc: 'Комфортний письмовий стіл, який неодмінно прикрашить ваш дім',
       category: 'desk',
-      price: '99.99'
+      price: '99.99',
+      amount: 1
     },
     {
       id: 2,
@@ -34,7 +36,8 @@ function App() {
       img: './image/bed.jpg',
       desc: 'Велике та комфортне ліжко, яке неодмінно прикрашить ваш дім',
       category: 'bed',
-      price: '249.99'
+      price: '249.99',
+      amount: 1
     },
     {
       id: 3,
@@ -42,7 +45,8 @@ function App() {
       img: './image/сlothes-hangers.jpg',
       desc: 'Практична вішалка для одягу, яка неодмінно прикрашить ваш дім',
       category: 'for-clothes',
-      price: '49.99'
+      price: '49.99',
+      amount: 1
     },
     {
       id: 4,
@@ -50,7 +54,8 @@ function App() {
       img: './image/wall-shelves.jpeg',
       desc: 'Практична настінна полиця, яка неодмінно прикрашить ваш дім',
       category: 'shelves',
-      price: '99.99'
+      price: '99.99',
+      amount: 1
     },
     {
       id: 5,
@@ -58,7 +63,8 @@ function App() {
       img: './image/Wardrobes.jpg',
       desc: 'Велткі гардеробні для одягу, які неодмінно прикрашить ваш дім',
       category: 'for-clothes',
-      price: '149.99'
+      price: '149.99',
+      amount: 1
     },
   ]})
 
@@ -91,7 +97,8 @@ function App() {
 
   return (
     <div className="wrapper">
-      <Header orders={state.order} onDelete={(id) => {
+      <Header orders={state.order} myitem={state.item} state={state} item={state.item}
+      set_state={set_state} onDelete={(id) => {
         const basket = state.order.filter(el => el.id !== id)
         set_state({...state, order: basket})
       }}/>
